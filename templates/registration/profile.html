@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}CampusConnect - Edit profile{% endblock %}
+
+{% block content %}
+<section class="content-card form-card">
+    <h1 class="page-heading">Your profile</h1>
+    <p class="text-secondary mb-4">Update the details on your account.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="d-flex flex-wrap gap-2 mt-4">
+            <button class="btn btn-primary" type="submit">Save changes</button>
+            <a class="btn btn-outline-secondary" href="{% url 'dashboard' %}">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

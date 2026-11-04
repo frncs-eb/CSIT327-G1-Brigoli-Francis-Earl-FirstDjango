@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}CampusConnect - Dashboard{% endblock %}
+
+{% block content %}
+<header class="mb-4">
+    <p class="text-uppercase text-secondary small fw-semibold mb-2">Your campus space</p>
+    <h1 class="page-heading mb-0">Welcome, {{ user.first_name|default:user.username }}!</h1>
+</header>
+
+<section class="content-card">
+    <h2 class="h5 mb-3">Account overview</h2>
+    <dl class="detail-list">
+        <div><dt>Role</dt><dd>{{ user.get_role_display }}</dd></div>
+        <div><dt>Course</dt><dd>{{ user.course|default:"Not set" }}</dd></div>
+        <div><dt>Community members</dt><dd>{{ member_count }}</dd></div>
+        <div><dt>Last login</dt><dd>{{ user.last_login|date:"M d, Y"|default:"First login" }}</dd></div>
+    </dl>
+
+    <div class="d-flex flex-wrap gap-2 mt-4">
+        <a class="btn btn-primary" href="{% url 'profile' %}">Edit profile</a>
+        {% if is_admin %}
+            <a class="btn btn-outline-secondary" href="{% url 'admin_panel' %}">Open admin panel</a>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

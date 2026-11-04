@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}CampusConnect - Log in{% endblock %}
+
+{% block content %}
+<section class="content-card form-card">
+    <h1 class="page-heading">Welcome back</h1>
+    <p class="text-secondary mb-4">Log in to continue to CampusConnect.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button class="btn btn-primary w-100" type="submit">Log in</button>
+    </form>
+
+    <p class="text-center text-secondary mt-4 mb-0">
+        New to CampusConnect? <a href="{% url 'signup' %}">Create an account</a>
+    </p>
+</section>
+{% endblock %}
