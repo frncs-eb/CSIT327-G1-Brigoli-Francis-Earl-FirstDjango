@@ -2,17 +2,18 @@
 
 {% block title %}CampusConnect - Create account{% endblock %}
 {% block content %}
-<section class="content-card form-card">
+<section class="content-card form-card auth-card">
+    <p class="eyebrow">Join CampusConnect</p>
     <h1 class="page-heading">Create your account</h1>
-    <p class="text-secondary mb-4">Join your campus community.</p>
+    <p class="muted-copy mb-4">Set up your account to connect with your campus community.</p>
 
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="btn btn-primary w-100" type="submit">Create account</button>
+        <button class="btn btn-primary w-100 py-2" type="submit">Create account</button>
     </form>
 
-    <p class="text-center text-secondary mt-4 mb-0">
+    <p class="text-center muted-copy mt-4 mb-0">
         Already have an account? <a href="{% url 'login' %}">Log in</a>
     </p>
 </section>
