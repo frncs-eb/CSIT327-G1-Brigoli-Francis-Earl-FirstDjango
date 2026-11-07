@@ -57,8 +57,8 @@ brigoli-campusconnect/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/frncs-eb/brigoli-campusconnect.git
-cd brigoli-campusconnect
+git clone https://github.com/frncs-eb/CSIT327-G1-Brigoli-Francis-Earl-FirstDjango.git
+cd CSIT327-G1-Brigoli-Francis-Earl-FirstDjango
 ```
 
 ### 2. Create and activate a virtual environment
